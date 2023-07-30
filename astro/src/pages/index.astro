@@ -1,10 +1,8 @@
 ---
-import Todos from '../components/todos.vue';
+import Todos from '../components/todos.astro';
 const response = await fetch('https://jonknoll.dev/wp-json/todo/v1/todos');
 const data = await response.json();
 const todos = data.todos;
-// Response.headers.setCache({maxAge: 200})
-// Astro.response.headers.setCache({maxAge: 200, ...})
 ---
 
 <html lang="en">
@@ -16,7 +14,7 @@ const todos = data.todos;
 		<title>Astro</title>
 	</head>
 	<body>
-		<Todos data={todos} client:idle />
+		<Todos data={todos} />
 	</body>
 </html>
 
