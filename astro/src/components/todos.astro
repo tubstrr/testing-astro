@@ -6,7 +6,7 @@ let loading = false;
 <script define:vars={{ loading, data }}>
   let localLoading = loading;
   
-  requestAnimationFrame(() => {
+  setTimeout(() => {
     const loadingDiv = document.getElementById('loading');
     const doneButtons = document.querySelectorAll('.done');
     const removeButtons = document.querySelectorAll('.remove');
@@ -121,7 +121,7 @@ let loading = false;
       loadingDiv.innerHTML = localLoading ? 'Loading...' : '';
       loadingDiv.classList.toggle('hidden');
     }
-  });
+  }, 16);
 </script>
 
 <section class="page">
